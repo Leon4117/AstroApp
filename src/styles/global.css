@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importa tus fuentes si no usas AstroFont */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap');
+
+/* Puedes añadir estilos CSS personalizados aquí si Tailwind no es suficiente */
+/* Por ejemplo, para el scroll-smooth en Safari si tienes problemas */
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,89 @@
+---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/zebra-hero-vision.png'; // Reemplaza con tu imagen de Hero
+---
+
+<section class="relative bg-gradient-to-br from-gray-950 to-gray-800 py-20 lg:py-32 overflow-hidden">
+	<div class="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+		<div class="text-center lg:text-left">
+			<h1 class="text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 animate-fade-in-up">
+				Zebra Artificial Vision: <span class="text-[#8bb303]">See Beyond Limits</span>
+			</h1>
+			<p class="text-lg text-gray-300 mb-8 max-w-lg mx-auto lg:mx-0 animate-fade-in-up delay-200">
+				Automatiza tus inspecciones de calidad, reduce defectos y aumenta la eficiencia con nuestras soluciones de visión artificial de vanguardia.
+			</p>
+			<div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 animate-fade-in-up delay-400">
+				<a href="#solutions" class="bg-[#8bb303] hover:bg-[#7aa202] text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+					Explora Nuestras Soluciones
+				</a>
+				<a href="#contact" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+					Solicita una Demo
+				</a>
+			</div>
+		</div>
+		<div class="relative w-full h-80 lg:h-[450px] flex items-center justify-center animate-fade-in-right delay-600">
+			<Image
+				src={heroImage}
+				alt="Cámara de visión artificial Zebra en un entorno industrial"
+				class="rounded-lg shadow-2xl object-cover w-full h-full"
+				widths={[320, 640, 1200]}
+				sizes="(max-width: 768px) 100vw, 50vw"
+			/>
+		</div>
+	</div>
+	<div class="absolute inset-0 bg-stars opacity-20 z-0"></div>
+</section>
+
+<style>
+	.bg-stars {
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cg fill='%239CA3AF' fill-opacity='0.2'%3E%3Cpath fill-rule='evenodd' d='M0 0h5v5H0V0zm5 5h5v5H5V5z'/%3E%3C/g%3E%3C/svg%3E");
+		animation: moveStars 60s linear infinite;
+	}
+
+	@keyframes moveStars {
+		from {
+			background-position: 0 0;
+		}
+		to {
+			background-position: 1000px 1000px;
+		}
+	}
+
+	/* Animaciones personalizadas */
+	@keyframes fadeInFromBottom {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes fadeInFromRight {
+		from {
+			opacity: 0;
+			transform: translateX(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	.animate-fade-in-up {
+		animation: fadeInFromBottom 0.8s ease-out forwards;
+		opacity: 0; /* Asegura que el elemento esté oculto antes de la animación */
+	}
+
+	.animate-fade-in-right {
+		animation: fadeInFromRight 0.8s ease-out forwards;
+		opacity: 0;
+	}
+
+	/* Retrasos para las animaciones */
+	.delay-200 { animation-delay: 0.2s; }
+	.delay-400 { animation-delay: 0.4s; }
+	.delay-600 { animation-delay: 0.6s; }
+</style>

@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets';
+import productCam1 from '../assets/zebra-product-cam1.png'; // Reemplaza con tus imágenes de producto
+import productCam2 from '../assets/zebra-product-cam2.png';
+import factoryScene from '../assets/zebra-factory-scene.png';
+
+const features = [
+	{
+		title: "Cámaras Inteligentes",
+		description: "Inspección de alta velocidad y precisión con algoritmos avanzados de IA.",
+		image: productCam1,
+	},
+	{
+		title: "Sensores de Visión Avanzados",
+		description: "Detección de defectos microscópicos y verificación de montaje en tiempo real.",
+		image: productCam2,
+	},
+	{
+		title: "Integración Seamless",
+		description: "Nuestras soluciones se integran perfectamente en tu línea de producción existente.",
+		image: factoryScene,
+	},
+];
+---
+
+<section id="products" class="py-16 lg:py-24 bg-gray-900">
+	<div class="container mx-auto px-4 text-center">
+		<h2 class="text-4xl font-bold text-white mb-12">Características Clave de Nuestros Productos</h2>
+		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+			{features.map((feature, index) => (
+				<div class="bg-gray-800 rounded-lg shadow-xl p-6 flex flex-col items-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+					<div class="w-full h-48 mb-6 relative">
+						<Image
+							src={feature.image}
+							alt={feature.title}
+							class="object-contain w-full h-full rounded-md"
+							widths={[300, 600]}
+							sizes="(max-width: 768px) 100vw, 33vw"
+						/>
+					</div>
+					<h3 class="text-2xl font-semibold text-white mb-3">{feature.title}</h3>
+					<p class="text-gray-300">{feature.description}</p>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
