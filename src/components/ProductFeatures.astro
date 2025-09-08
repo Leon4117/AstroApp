@@ -1,23 +1,23 @@
 ---
 import { Image } from 'astro:assets';
-import productCam1 from '../assets/zebra-product-cam1.png'; // Reemplaza con tus imágenes de producto
-import productCam2 from '../assets/zebra-product-cam2.png';
-import factoryScene from '../assets/zebra-factory-scene.png';
+import productCam1 from '../assets/diagram.png'; // Reemplaza con tus imágenes de producto
+import productCam2 from '../assets/camera_image.jpg';
+import factoryScene from '../assets/profinet.png';
 
 const features = [
 	{
-		title: "Cámaras Inteligentes",
-		description: "Inspección de alta velocidad y precisión con algoritmos avanzados de IA.",
+		title: "Desarrollo basado en diagramas de flujos",
+		description: "Cree rápidamente aplicaciones de visión artificial utilizando pasos de diagrama de flujo intuitivos sin necesidad de escribir código tradicional. El software permite la creación sencilla de interfaces de operador personalizadas basadas en la web.",
 		image: productCam1,
 	},
 	{
-		title: "Sensores de Visión Avanzados",
-		description: "Detección de defectos microscópicos y verificación de montaje en tiempo real.",
+		title: "Opciones de implementación flexibles",
+		description: "Aproveche un entorno independiente del hardware que admite diversas plataformas de hardware de Zebra y de terceros para configuraciones de visión artificial versátiles.",
 		image: productCam2,
 	},
 	{
-		title: "Integración Seamless",
-		description: "Nuestras soluciones se integran perfectamente en tu línea de producción existente.",
+		title: "Comunicación optimizada",
+		description: "Conéctese y comuníquese fácilmente con sistemas de automatización y empresariales utilizando E/S discretas y una variedad de protocolos de comunicación compatibles para una integración eficiente de la visión artificial.",
 		image: factoryScene,
 	},
 ];
@@ -25,7 +25,7 @@ const features = [
 
 <section id="products" class="py-16 lg:py-24 bg-[#8bb303]">
 	<div class="container mx-auto px-4 text-center">
-		<h2 class="text-4xl font-bold text-white mb-12">Características Clave de Nuestros Productos</h2>
+		<h2 class="text-4xl font-bold text-white mb-12">Software de visión artificial</h2>
 		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 			{features.map((feature, index) => (
 				<div class="bg-gray-800 rounded-lg shadow-xl p-6 flex flex-col items-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
