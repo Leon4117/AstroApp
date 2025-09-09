@@ -1,0 +1,36 @@
+/* Botón flotante para ir al inicio */
+.back-to-top {
+  position: fixed;
+  bottom: 90px; /* Espacio arriba del botón de WhatsApp */
+  right: 24px;
+  z-index: 999;
+  background: #8bb303;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: #7aa202;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}

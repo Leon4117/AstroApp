@@ -8,12 +8,53 @@ import Contact from '../components/Contact.astro';
 // Importa más componentes a medida que los crees (ProblemSolution, HowItWorks, Testimonials)
 ---
 
-<Layout title="Zebra Artificial Vision: See Beyond Limits" description="Descubre las soluciones de visión artificial de Zebra para automatizar inspecciones y mejorar la productividad.">
+<Layout title="Zebra Artificial Vision" description="Descubre las soluciones de visión artificial de Zebra para automatizar inspecciones y mejorar la productividad.">
 	<Header />
 	<main>
+		<div id="flash-ok" class="hidden bg-green-600 text-white p-4 rounded mb-6">
+			✅ ¡Tu mensaje fue enviado con éxito!
+		</div>
 		<Hero />
 		<ProductFeatures />
 		<Applications />
 		<Contact />
 	</main>
-	</Layout>
+<button id="backToTop" class="back-to-top" aria-label="Volver arriba">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+	<path d="M12 4l-8 8h5v8h6v-8h5z"/>
+</svg>
+</button>
+<a href="https://wa.me/+5213314603455" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Chatea por WhatsApp">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+</a>
+<script>
+    // Mostrar/ocultar botón al hacer scroll
+    document.addEventListener('DOMContentLoaded', () => {
+		const backToTop = document.getElementById('backToTop');
+		
+		if (backToTop) {
+			window.addEventListener('scroll', () => {
+				if (window.scrollY > 300) {
+					backToTop.classList.add('visible');
+				} else {
+					backToTop.classList.remove('visible');
+				}
+			});
+			
+			// Scroll suave al hacer clic
+			backToTop.addEventListener('click', (e) => {
+				e.preventDefault();
+				window.scrollTo({
+					top: 0,
+					behavior: 'smooth'
+				});
+			});
+		}
+	});
+	const p = new URLSearchParams(location.search);
+	if (p.get('sent') === '1') {
+		document.getElementById('flash-ok')?.classList.remove('hidden');
+		history.replaceState({}, '', location.pathname); // limpia ?sent=1
+	}
+</script>
+</Layout>

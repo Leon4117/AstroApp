@@ -4,7 +4,7 @@
 		<p class="text-lg text-gray-300 mb-10">
 			¿Interesado en saber más o solicitar una demostración personalizada? Rellena el formulario y nos pondremos en contacto contigo.
 		</p>
-		<form class="bg-gray-800 p-8 rounded-lg shadow-xl space-y-6">
+		<form action="/api/contact" method="POST" enctype="application/x-www-form-urlencoded" class="bg-gray-800 p-8 rounded-lg shadow-xl space-y-6">
 			<div>
 				<label for="name" class="block text-left text-gray-300 text-sm font-medium mb-2">Nombre Completo</label>
 				<input type="text" id="name" name="name" class="w-full p-3 rounded-md bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-[#8bb303]" placeholder="Tu nombre" required>

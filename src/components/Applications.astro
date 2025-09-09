@@ -1,48 +1,72 @@
 ---
 // Importa iconos SVG o imágenes para cada aplicación
-import manufacturingIcon from '../assets/icon-manufacturing.svg';
-import logisticsIcon from '../assets/icon-logistics.svg';
-import healthcareIcon from '../assets/icon-healthcare.svg';
-import automotiveIcon from '../assets/icon-automotive.svg';
+import image1 from '../assets/image1.png';
+import image2 from '../assets/image2.png';
+import image3 from '../assets/image3.png';
+import image4 from '../assets/image4.png';
+import image5 from '../assets/image5.png';
+import image6 from '../assets/image6.png';
 import { Image } from 'astro:assets';
 
 const applications = [
 	{
-		name: "Manufactura",
-		description: "Control de calidad, ensamblaje, trazabilidad.",
-		icon: manufacturingIcon,
+		name: "image1",
+		icon: image1,
 	},
 	{
-		name: "Logística y Almacenamiento",
-		description: "Identificación, clasificación, verificación de paquetes.",
-		icon: logisticsIcon,
+		name: "image2",
+		icon: image2,
 	},
 	{
-		name: "Salud y Farmacéutica",
-		description: "Inspección de empaques, control de dosificación.",
-		icon: healthcareIcon,
+		name: "image3",
+		icon: image3,
 	},
 	{
-		name: "Automotriz",
-		description: "Inspección de componentes, ensamblaje de piezas.",
-		icon: automotiveIcon,
+		name: "image4",
+		icon: image4,
+	},
+	{
+		name: "image5",
+		icon: image5,
+	},
+	{
+		name: "image6",
+		icon: image6,
 	},
 ];
 ---
 
-<section id="solutions" class="py-16 lg:py-24 bg-gray-950">
-	<div class="container mx-auto px-4 text-center">
-		<h2 class="text-4xl font-bold text-white mb-12">Soluciones Para Cada Industria</h2>
-		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-			{applications.map((app) => (
-				<div class="bg-gray-800 rounded-lg shadow-xl p-6 flex flex-col items-center">
-					<div class="mb-4 w-16 h-16 flex items-center justify-center bg-[#8bb303] rounded-full text-white text-3xl">
-						<Image src={app.icon} alt={app.name} width={40} height={40} />
+<section id="solutions" class="py-16 lg:py-24 bg-gray-950 w-full">
+	<div class="w-full px-4 text-center">
+		<h2 class="text-4xl font-bold text-white mb-12">Soluciones para cada industria</h2>
+		<div class="w-full">
+			<div class="slider-container w-full">
+				<div class="slider w-full">
+					<div class="slide-track">
+						{applications.map((app) => (
+							<div class="slide">
+								<Image 
+									src={app.icon} 
+									alt={app.name} 
+									class="max-w-[400px] h-[168px] mx-auto"
+									loading="lazy"
+								/>
+							</div>
+						))}
+						{/* Duplicar los slides para creara el efecto infinito */}
+						{applications.map((app) => (
+							<div class="slide">
+								<Image 
+									src={app.icon} 
+									alt={app.name}
+									class="max-w-[400px] h-[168px] mx-auto"
+									loading="lazy"
+								/>
+							</div>
+						))}
 					</div>
-					<h3 class="text-2xl font-semibold text-white mb-2">{app.name}</h3>
-					<p class="text-gray-300">{app.description}</p>
 				</div>
-			))}
+			</div>
 		</div>
 	</div>
 </section>

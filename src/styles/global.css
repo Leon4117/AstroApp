@@ -6,9 +6,101 @@
 
 /* Importa tus fuentes si no usas AstroFont */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap');
+@import "./whatsapp.css";
+@import "./back-to-top.css";
 
 /* Puedes añadir estilos CSS personalizados aquí si Tailwind no es suficiente */
 /* Por ejemplo, para el scroll-smooth en Safari si tienes problemas */
 html {
   scroll-behavior: smooth;
+}
+
+/* Estilos del contenedor del slider */
+.slider-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+/* Estilos del slider */
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Pista de deslizamiento */
+.slide-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+  will-change: transform;
+}
+
+/* Estilos de cada slide */
+.slide {
+  flex: 0 0 300px;
+  background: rgba(31, 41, 55, 0.7);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.slide:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Asegurar que las imágenes sean responsivas */
+.slide img {
+  width: 100%;
+  height: 168px;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+/* Animación del slider */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-300px * 4 - 2rem * 4)); /* Ancho del slide + gap */
+  }
+}
+
+/* Efecto de pausa al hacer hover */
+.slider:hover .slide-track {
+  animation-play-state: paused;
+}
+
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+  .slide {
+    flex: 0 0 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide {
+    flex: 0 0 250px;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-250px * 4 - 2rem * 4));
+    }
+  }
 }
