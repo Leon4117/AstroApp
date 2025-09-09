@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^9.4.3",
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.13.5",
     "nodemailer": "^7.0.6",
