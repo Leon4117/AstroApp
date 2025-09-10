@@ -1,0 +1,63 @@
+---
+import { Image } from 'astro:assets';
+
+const applications = [
+	{
+		name: "Verificación de ensamblaje",
+		description: "Asegura la presencia o ausencia de componentes clave en un producto.",
+		iconClass: "fa-solid fa-check-double",
+	},
+	{
+		name: "Metrología y dimensionamiento",
+		description: "Realiza mediciones precisas para garantizar que las piezas cumplen con las tolerancias y especificaciones de diseño.",
+		iconClass: "fa-solid fa-ruler-combined",
+	},
+	{
+		name: "Lectura y verificación de códigos",
+		description: "Lee y verifica códigos de barras, códigos 2D y caracteres impresos (OCR) para seguimiento y trazabilidad.",
+		iconClass: "fa-solid fa-barcode",
+	},
+	{
+		name: "Inspección de defectos",
+		description: "Detecta fallas estéticas o funcionales en superficies y productos.",
+		iconClass: "fa-solid fa-bug",
+	},
+	{
+		name: "Inspección de cordones",
+		description: "Analiza la calidad y continuidad de cordones de adhesivo o soldadura.",
+		iconClass: "fa-solid fa-grip-lines",
+	},
+	{
+		name: "Verificación de nivel de llenado",
+		description: "Confirma que los envases contienen la cantidad correcta de producto.",
+		iconClass: "fa-solid fa-fill-drip",
+	},
+	{
+		name: "Análisis 3D",
+		description: "Realiza mediciones de perfil, volumen y altura utilizando datos de profundidad.",
+		iconClass: "fa-solid fa-cube",
+	},
+	{
+		name: "Clasificación con IA",
+		description: "Utiliza el aprendizaje profundo para clasificar productos, incluso en casos con variaciones naturales o defectos estéticos complejos donde es difícil establecer una regla fija.",
+		iconClass: "fa-solid fa-brain",
+	},
+];
+---
+
+<section id="solutions" class="py-16 lg:py-24 bg-gray-950">
+	<div class="container mx-auto px-4 text-center">
+		<h2 class="text-4xl font-bold text-white mb-12">Variedad de tipos de inspección</h2>
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+			{applications.map((app) => (
+				<div class="bg-gray-800 rounded-lg shadow-xl p-6 flex flex-col items-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+					<div class="mb-4 w-16 h-16 flex items-center justify-center bg-[#8bb303] rounded-full text-white text-3xl">
+						<i class={app.iconClass}></i>
+					</div>
+					<h3 class="text-2xl font-semibold text-white mb-2">{app.name}</h3>
+					<p class="text-gray-300">{app.description}</p>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
